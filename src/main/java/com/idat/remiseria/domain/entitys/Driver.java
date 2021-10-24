@@ -9,12 +9,12 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "passengers")
-public class Passenger {
+@Table(name = "drivers")
+public class Driver {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_passenger")
-    private Integer idPassenger;
+    @Column(name = "id_driver")
+    private Integer idDriver;
 
     @Column(name = "id_user")
     private Integer idUser;

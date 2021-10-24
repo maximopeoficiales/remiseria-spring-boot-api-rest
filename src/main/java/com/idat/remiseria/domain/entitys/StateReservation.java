@@ -9,19 +9,15 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "passengers")
-public class Passenger {
+@Table(name = "stateReservations")
+public class StateReservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_passenger")
-    private Integer idPassenger;
+    @Column(name = "id_state_reservation")
+    private Integer idStateReservation;
 
-    @Column(name = "id_user")
-    private Integer idUser;
-
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id_user", insertable = false, updatable = false)
-    private User user;
+    @Column(length = 100)
+    private String description;
 
     @Column(name = "date_created")
     @CreationTimestamp

@@ -2,6 +2,7 @@ package com.idat.remiseria.domain.entitys;
 
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
@@ -9,19 +10,24 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "passengers")
-public class Passenger {
+@Table(name = "tariffs")
+public class Tariff {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_passenger")
-    private Integer idPassenger;
+    @Column(name = "id_tariff")
+    private Integer idTariff;
 
-    @Column(name = "id_user")
-    private Integer idUser;
+    @Column(length = 100)
+    private String description;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id_user", insertable = false, updatable = false)
-    private User user;
+    @Column(length = 150)
+    private String destination;
+
+    @Column(length = 150)
+    private String origin;
+
+    @Column()
+    private Double amount;
 
     @Column(name = "date_created")
     @CreationTimestamp

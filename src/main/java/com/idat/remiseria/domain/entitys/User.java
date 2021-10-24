@@ -16,7 +16,7 @@ public class User {
     @Column(name = "id")
     private Integer idClient;
 
-    @Column(length = 30)
+    @Column(length = 30, unique = true)
     private String username;
 
     @Column(length = 100, name = "_password")
@@ -34,7 +34,7 @@ public class User {
     @Column(length = 9)
     private String phone;
 
-    @Column(length = 45)
+    @Column(length = 100, unique = true)
     private String email;
 
     private Boolean active;

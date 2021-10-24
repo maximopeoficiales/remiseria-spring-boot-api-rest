@@ -1,5 +1,6 @@
 package com.idat.remiseria.domain.entitys;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -9,19 +10,23 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "passengers")
-public class Passenger {
+@Table(name = "permissions")
+public class Permission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_passenger")
-    private Integer idPassenger;
+    @Column(name = "id_permission")
+    private Integer idPermission;
 
-    @Column(name = "id_user")
-    private Integer idUser;
+    @Column(length = 150)
+    private String description;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id_user", insertable = false, updatable = false)
-    private User user;
+    @Column(name = "id_rol")
+    private Integer idRol;
+
+    @JsonIgnore
+    @ManyToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "id_rol", insertable = false, updatable = false)
+    private Role role;
 
     @Column(name = "date_created")
     @CreationTimestamp
