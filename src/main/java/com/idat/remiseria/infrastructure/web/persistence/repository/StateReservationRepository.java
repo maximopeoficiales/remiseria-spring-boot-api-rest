@@ -1,11 +1,8 @@
-package com.idat.remiseria.web.persistence.repository;
+package com.idat.remiseria.infrastructure.web.persistence.repository;
 
-import com.idat.remiseria.app.contracts.IRoleRepository;
 import com.idat.remiseria.app.contracts.IStateReservationRepository;
-import com.idat.remiseria.domain.entitys.Role;
 import com.idat.remiseria.domain.entitys.StateReservation;
-import com.idat.remiseria.web.persistence.crud.IRoleCR;
-import com.idat.remiseria.web.persistence.crud.IStateReservationCR;
+import com.idat.remiseria.infrastructure.web.persistence.crud.IStateReservationCR;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

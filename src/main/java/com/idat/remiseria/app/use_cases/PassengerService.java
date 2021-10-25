@@ -1,7 +1,7 @@
 package com.idat.remiseria.app.use_cases;
 
 import com.idat.remiseria.domain.entitys.Passenger;
-import com.idat.remiseria.web.persistence.repository.PassengerRepository;
+import com.idat.remiseria.infrastructure.web.persistence.repository.PassengerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

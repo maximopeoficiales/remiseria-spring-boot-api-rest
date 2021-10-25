@@ -1,7 +1,7 @@
 package com.idat.remiseria.app.use_cases;
 
 import com.idat.remiseria.domain.entitys.Employee;
-import com.idat.remiseria.web.persistence.repository.EmployeeRepository;
+import com.idat.remiseria.infrastructure.web.persistence.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

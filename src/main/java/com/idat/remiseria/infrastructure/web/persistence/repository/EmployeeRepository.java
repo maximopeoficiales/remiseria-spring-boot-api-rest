@@ -1,11 +1,8 @@
-package com.idat.remiseria.web.persistence.repository;
+package com.idat.remiseria.infrastructure.web.persistence.repository;
 
-import com.idat.remiseria.app.contracts.IDriverRepository;
 import com.idat.remiseria.app.contracts.IEmployeeRepository;
-import com.idat.remiseria.domain.entitys.Driver;
 import com.idat.remiseria.domain.entitys.Employee;
-import com.idat.remiseria.web.persistence.crud.IDriverCR;
-import com.idat.remiseria.web.persistence.crud.IEmployeeCR;
+import com.idat.remiseria.infrastructure.web.persistence.crud.IEmployeeCR;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 

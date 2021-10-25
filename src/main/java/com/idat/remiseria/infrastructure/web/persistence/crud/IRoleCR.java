@@ -1,4 +1,4 @@
-package com.idat.remiseria.web.persistence.crud;
+package com.idat.remiseria.infrastructure.web.persistence.crud;
 
 import com.idat.remiseria.domain.entitys.Role;
 import org.springframework.data.repository.CrudRepository;

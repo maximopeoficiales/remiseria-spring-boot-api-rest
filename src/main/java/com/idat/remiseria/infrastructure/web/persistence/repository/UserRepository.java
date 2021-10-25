@@ -1,10 +1,8 @@
-package com.idat.remiseria.web.persistence.repository;
+package com.idat.remiseria.infrastructure.web.persistence.repository;
 
-import com.idat.remiseria.app.contracts.ITariffRepository;
 import com.idat.remiseria.app.contracts.IUserRepository;
-import com.idat.remiseria.domain.entitys.Tariff;
 import com.idat.remiseria.domain.entitys.User;
-import com.idat.remiseria.web.persistence.crud.IUserCR;
+import com.idat.remiseria.infrastructure.web.persistence.crud.IUserCR;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
