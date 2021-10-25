@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -22,6 +23,10 @@ public class Driver {
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id_user", insertable = false, updatable = false)
     private User user;
+
+    @OneToMany(mappedBy = "driver", cascade = {CascadeType.ALL})
+    private List<Vehicle> vehicles;
+
 
     @Column(name = "date_created")
     @CreationTimestamp

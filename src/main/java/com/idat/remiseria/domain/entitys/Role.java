@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,6 +24,10 @@ public class Role {
 
     @Column(length = 100)
     private String description;
+
+    @OneToMany(mappedBy = "role", cascade = {CascadeType.ALL})
+    private List<Permission> permissions;
+
 
     @Column(name = "date_created")
     @CreationTimestamp
