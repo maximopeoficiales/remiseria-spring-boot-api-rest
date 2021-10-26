@@ -16,13 +16,10 @@ public class Payment {
     @Column(name = "id_payment")
     private Integer idPayment;
 
-
     @Temporal(TemporalType.DATE)
     private Date paymentDate;
 
-
     private Double amount;
-
 
     @Column(name = "id_vehicle")
     private Integer idVehicle;
@@ -36,8 +33,14 @@ public class Payment {
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id_employee", insertable = false, updatable = false)
-    private Employee employee;
+    private User employee;
 
+    @Column(name = "id_driver")
+    private Integer idDriver;
+
+    @OneToOne(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "id_driver", insertable = false, updatable = false)
+    private User driver;
 
     @Column(name = "date_created")
     @CreationTimestamp
@@ -46,6 +49,5 @@ public class Payment {
     @Column(name = "date_updated")
     @UpdateTimestamp
     private Date dateUpdated;
-
 
 }

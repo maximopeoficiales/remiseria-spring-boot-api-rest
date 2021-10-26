@@ -45,7 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         // permitido el acceso
         // http.authorizeRequests().antMatchers("/**/swagger-ui**").permitAll();
 
-        http.csrf().disable().authorizeRequests().antMatchers("/**/authenticate", "/**/public/**").permitAll()
+        http.csrf().disable().authorizeRequests().antMatchers("/**/authenticate", "/**/register", "/**/public/**").permitAll()
                 .anyRequest().authenticated().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         // y las demas peticiones si necesitaran autenticacion

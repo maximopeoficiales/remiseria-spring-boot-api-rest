@@ -1,6 +1,7 @@
 package com.idat.remiseria.app.use_cases;
 
 import com.idat.remiseria.domain.entitys.User;
+import com.idat.remiseria.infrastructure.shared.EncryptPassword;
 import com.idat.remiseria.infrastructure.web.persistence.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,7 +23,13 @@ public class UserService {
         return repository.findById(idUser);
     }
 
+    public Optional<User> findByUsername(String username) {
+        return repository.findByUsername(username);
+    }
+
     public User save(User user) {
+        user.setActive(true);
+        user.setPassword(EncryptPassword.encrypt(user.getPassword()));
         return repository.save(user);
     }
 

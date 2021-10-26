@@ -44,14 +44,14 @@ public class Reservation {
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id_passenger", insertable = false, updatable = false)
-    private Passenger passenger;
+    private User passenger;
 
     @Column(name = "id_driver")
     private Integer idDriver;
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id_driver", insertable = false, updatable = false)
-    private Driver driver;
+    private User driver;
 
 
     @Column(name = "date_created")

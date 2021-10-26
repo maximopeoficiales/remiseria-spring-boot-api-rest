@@ -20,8 +20,8 @@ public class Vehicle {
     @Column(length = 150)
     private String description;
 
-    @Column(name = "id_driver")
-    private Integer idDriver;
+    @Column(name = "id_user")
+    private Integer idUser;
 
 
     @Column(length = 150)
@@ -39,8 +39,8 @@ public class Vehicle {
 
     @JsonIgnore
     @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name = "id_driver", insertable = false, updatable = false)
-    private Driver driver;
+    @JoinColumn(name = "id_user", insertable = false, updatable = false)
+    private User user;
 
     @Column(name = "date_created")
     @CreationTimestamp

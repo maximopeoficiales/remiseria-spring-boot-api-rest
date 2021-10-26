@@ -6,6 +6,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Data
 @Entity
@@ -41,6 +42,9 @@ public class User {
 
     @Column(name = "id_rol")
     private Integer idRol;
+
+    @OneToMany(mappedBy = "user", cascade = {CascadeType.ALL})
+    private List<Vehicle> vehicles;
 
     @OneToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "id_rol", insertable = false, updatable = false)

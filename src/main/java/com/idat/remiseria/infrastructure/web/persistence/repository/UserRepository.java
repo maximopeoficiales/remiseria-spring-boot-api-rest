@@ -25,6 +25,11 @@ public class UserRepository implements IUserRepository {
     }
 
     @Override
+    public Optional<User> findByUsername(String username) {
+        return crud.findByUsername(username);
+    }
+
+    @Override
     public User save(User user) {
         return crud.save(user);
     }
