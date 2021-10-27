@@ -1,6 +1,7 @@
 package com.idat.remiseria.infrastructure.web.controllers;
 
 import com.idat.remiseria.app.use_cases.UserService;
+import com.idat.remiseria.domain.dto.CreateUserDto;
 import com.idat.remiseria.domain.entitys.User;
 import com.idat.remiseria.domain.responses.AuthenticationRequest;
 import com.idat.remiseria.domain.responses.AuthenticationResponse;
@@ -72,7 +73,17 @@ public class AuthController {
     @PostMapping("/register")
     @ApiOperation("Register User")
     @ApiResponse(code = 200, message = "OK")
-    public ResponseEntity<User> saveUser(@RequestBody User user) {
-        return new ResponseEntity<>(userService.save(user), HttpStatus.OK);
+    public ResponseEntity<User> saveUser(@RequestBody CreateUserDto user) {
+        User newUser = new User();
+        newUser.setUsername(user.getUsername());
+        newUser.setPassword(user.getPassword());
+        newUser.setFirstName(user.getFirstName());
+        newUser.setLastName(user.getLastName());
+        newUser.setAddress(user.getAddress());
+        newUser.setPhone(user.getPhone());
+        newUser.setEmail(user.getEmail());
+        newUser.setIdRol(user.getIdRol());
+
+        return new ResponseEntity<>(userService.save(newUser), HttpStatus.OK);
     }
 }
